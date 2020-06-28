@@ -1,0 +1,16 @@
+{
+    "title_app": "RigntFuel",
+    "consumption": "Consumo medio",
+    "bifuel": "Bicombustible",
+    "odometer_1": "Odómetro inicial u odómetro parcial",
+    "odometer_2": "Cuentakilómetros final",
+    "hint_text_1": "ingrese el km de la última recarga",
+    "hint_text_2": "ingrese el km del suministro actual",
+    "hint_text_3": "Ponga la misma cantidad de litros marcada en la bomba",
+    "fuel": "Combustible",
+    "calculate": "Calcular",
+    "smt_ethanol": "Es mejor llenar con etanol",
+    "smt_gasoline": "Es mejor repostar con gasolina",
+    "tax_gasoline": "Precio de la gasolina",
+    "tax_ethanol": "Precio de etanol"
+}
