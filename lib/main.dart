@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:rigntfuel/views/average_consumption_page.dart';
+
+import 'app_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,11 +16,35 @@ class MyApp extends StatelessWidget {
       title: 'RigntFuel',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      // List all of the app's suportde locales here
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('pt', 'BR'),
+        Locale('es', 'US'),
+        Locale('es', 'BR'),
+      ],
+      // these delegates make sure that the localization data for proper lenguage is loaded
+      localizationsDelegates: [
+        // Class que vai fazer a tradução
+        AppLocalizations.delegate,
+
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      // Returns a locale which will be used by the app
+      localeResolutionCallback: (locale, supportedLocales) {
+        // Check if locale which will be used by the app
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale.languageCode &&
+              supportedLocale.countryCode == locale.countryCode) {
+            return supportedLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
+
       home: MyHomePage(),
     );
   }
@@ -43,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             RaisedButton(
                 child: Text(
-                  "Consumo Medio",
+                  AppLocalizations.of(context).translate('consumption'),
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Theme.of(context).accentColor,
@@ -55,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 }),
             RaisedButton(
                 child: Text(
-                  "Bi-Compustivel",
+                  AppLocalizations.of(context).translate('bifuel'),
                   style: TextStyle(
                     color: Colors.white,
                   ),
