@@ -97,11 +97,14 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
                     hintText:
                         AppLocalizations.of(context).translate('hint_text_2'),
                   ),
+                  // TODO erro de validação: esse campo deve ser maior que o primeiro
+                  validator: (value) => value.isEmpty && _enableValidator
+                      ? AppLocalizations.of(context).translate('validation')
+                      : null,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                // TODO erro de validação nesse campo
                 TextFormField(
                   keyboardType: TextInputType.number,
                   controller: _fuel,

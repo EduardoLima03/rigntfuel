@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:rigntfuel/views/average_consumption_page.dart';
+import 'package:rigntfuel/views/bi_fuel_page.dart';
 
 import 'app_localizations.dart';
 
@@ -87,7 +88,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.white,
                   ),
                 ),
-                onPressed: null),
+                color: Theme.of(context).accentColor,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BiFuelPage()));
+                }),
           ],
         ),
       ),
