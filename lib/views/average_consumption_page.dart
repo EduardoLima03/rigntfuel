@@ -18,20 +18,29 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
 
   //calculor para definir o consumo
   void _calculationConsumption() {
-    if (_initialOdometer.text.length > 0 && _initialOdometer.text.length <= 3) {
-      setState(() {
-        _mensag = (int.parse(_initialOdometer.text) / double.parse(_fuel.text))
-                .toStringAsFixed(2) +
-            'km/l';
-      });
-    } else {
-      setState(() {
-        _mensag = ((int.parse(_finalOdometer.text) -
-                        int.parse(_initialOdometer.text)) /
-                    double.parse(_fuel.text))
-                .toStringAsFixed(2) +
-            'km/l';
-      });
+    /** Esse teste consiste em saber se o cmapo esta validade, se nao tiver,
+     *  não realiza o calculo */
+    if (_formKay.currentState.validate()) {
+      /* Teste para saber se o primeiro campo tem de 1 ate 3 digitos. se for esse
+      * valor sera o km rodados. se não é feito o calculo do km rodado
+      */
+      if (_initialOdometer.text.length > 0 &&
+          _initialOdometer.text.length <= 3) {
+        setState(() {
+          _mensag =
+              (int.parse(_initialOdometer.text) / double.parse(_fuel.text))
+                      .toStringAsFixed(2) +
+                  'km/l';
+        });
+      } else {
+        setState(() {
+          _mensag = ((int.parse(_finalOdometer.text) -
+                          int.parse(_initialOdometer.text)) /
+                      double.parse(_fuel.text))
+                  .toStringAsFixed(2) +
+              'km/l';
+        });
+      }
     }
   }
 
@@ -44,100 +53,104 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
       body: Scrollbar(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(
-                height: 24,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                maxLength: 6,
-                controller: _initialOdometer,
-                decoration: InputDecoration(
-                  labelText:
-                      AppLocalizations.of(context).translate('odometer_1'),
-                  hintText:
-                      AppLocalizations.of(context).translate('hint_text_1'),
+          child: Form(
+            key: _formKay,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: 24,
                 ),
-                validator: (value) => value == null
-                    ? AppLocalizations.of(context).translate('validation')
-                    : null,
-                onChanged: (value) {
-                  setState(() {
-                    _enableValidator = _initialOdometer.text.length > 0 &&
-                            _initialOdometer.text.length <= 3
-                        ? false
-                        : true;
-                  });
-                },
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                maxLength: 6,
-                enabled: _enableValidator,
-                controller: _finalOdometer,
-                decoration: InputDecoration(
-                  labelText:
-                      AppLocalizations.of(context).translate('odometer_2'),
-                  hintText:
-                      AppLocalizations.of(context).translate('hint_text_2'),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.number,
-                controller: _fuel,
-                validator: (value) => value == null
-                    ? AppLocalizations.of(context).translate('validation')
-                    : null,
-                decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context).translate('fuel'),
-                  hintText:
-                      AppLocalizations.of(context).translate('hint_text_3'),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              RaisedButton(
-                  child: Text(
-                    AppLocalizations.of(context).translate('calculate'),
-                    style: TextStyle(color: Colors.white),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  maxLength: 6,
+                  controller: _initialOdometer,
+                  decoration: InputDecoration(
+                    labelText:
+                        AppLocalizations.of(context).translate('odometer_1'),
+                    hintText:
+                        AppLocalizations.of(context).translate('hint_text_1'),
                   ),
-                  color: Theme.of(context).accentColor,
-                  onPressed: _calculationConsumption),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Text(
-                    AppLocalizations.of(context).translate('msg'),
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
+                  validator: (value) => value.isEmpty
+                      ? AppLocalizations.of(context).translate('validation')
+                      : null,
+                  onChanged: (value) {
+                    setState(() {
+                      _enableValidator = _initialOdometer.text.length > 0 &&
+                              _initialOdometer.text.length <= 3
+                          ? false
+                          : true;
+                    });
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  maxLength: 6,
+                  enabled: _enableValidator,
+                  controller: _finalOdometer,
+                  decoration: InputDecoration(
+                    labelText:
+                        AppLocalizations.of(context).translate('odometer_2'),
+                    hintText:
+                        AppLocalizations.of(context).translate('hint_text_2'),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                // TODO erro de validação nesse campo
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  controller: _fuel,
+                  validator: (value) => value.isEmpty
+                      ? AppLocalizations.of(context).translate('validation')
+                      : null,
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context).translate('fuel'),
+                    hintText:
+                        AppLocalizations.of(context).translate('hint_text_3'),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                RaisedButton(
+                    child: Text(
+                      AppLocalizations.of(context).translate('calculate'),
+                      style: TextStyle(color: Colors.white),
                     ),
-                  ),
-                  SizedBox(
-                    width: 2,
-                  ),
-                  Text(
-                    _mensag,
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24.0,
+                    color: Theme.of(context).accentColor,
+                    onPressed: _calculationConsumption),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context).translate('msg'),
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    SizedBox(
+                      width: 2,
+                    ),
+                    Text(
+                      _mensag,
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24.0,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
