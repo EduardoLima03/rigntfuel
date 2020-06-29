@@ -97,10 +97,20 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
                     hintText:
                         AppLocalizations.of(context).translate('hint_text_2'),
                   ),
-                  // TODO erro de validação: esse campo deve ser maior que o primeiro
-                  validator: (value) => value.isEmpty && _enableValidator
-                      ? AppLocalizations.of(context).translate('validation')
-                      : null,
+                  validator: (value) {
+                    // TODO erro de validação
+                    if (value.isEmpty && _enableValidator) {
+                      if (int.parse(_finalOdometer.text) <=
+                          int.parse(_initialOdometer.text)) {
+                        return AppLocalizations.of(context)
+                            .translate('validation_2');
+                      }
+                      return AppLocalizations.of(context)
+                          .translate('validation');
+                    } else {
+                      return null;
+                    }
+                  },
                 ),
                 SizedBox(
                   height: 10,

@@ -14,5 +14,6 @@
     "tax_gasoline": "Precio de la gasolina",
     "tax_ethanol": "Precio de etanol",
     "validation": "campo vacío prohibido",
+    "validation_2": "el valor debe ser mayor que el primer campo",
     "msg":"está haciendo"
 }
