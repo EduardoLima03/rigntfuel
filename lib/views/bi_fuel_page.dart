@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 import '../app_localizations.dart';
 
 class BiFuelPage extends StatefulWidget {
@@ -11,17 +10,17 @@ class BiFuelPage extends StatefulWidget {
 }
 
 class _BiFuelPageState extends State<BiFuelPage> {
-  var f = NumberFormat("##.0#", "en_US");
   String _mensg = "";
 
-  final _controllerEtanol = TextEditingController(text: "");
-  final _controllerGasolina = TextEditingController(text: "");
+  final _controllerEtanol =
+      MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
+  final _controllerGasolina =
+      MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
 
   void calculo() {
     double porcentegem = widget._continuousValue / 100;
-    double gasolina =
-        double.parse(_controllerGasolina.text.replaceAll(',', '.'));
-    double etanol = double.parse(_controllerEtanol.text.replaceAll(',', '.'));
+    double gasolina = double.parse(_controllerGasolina.text);
+    double etanol = double.parse(_controllerEtanol.text);
 
     if ((etanol / gasolina) <= porcentegem) {
       setState(() {
@@ -89,7 +88,7 @@ class _BiFuelPageState extends State<BiFuelPage> {
                   labelStyle: TextStyle(
                     color: Theme.of(context).accentColor,
                   ),
-                  prefixText: "R\$",
+                  prefixText: "R\$ ",
                 ),
                 keyboardType: TextInputType.numberWithOptions(),
                 controller: _controllerEtanol,
@@ -99,7 +98,7 @@ class _BiFuelPageState extends State<BiFuelPage> {
                   labelText:
                       AppLocalizations.of(context).translate('tax_gasoline'),
                   labelStyle: TextStyle(color: Theme.of(context).accentColor),
-                  prefixText: "R\$",
+                  prefixText: "R\$ ",
                 ),
                 keyboardType: TextInputType.numberWithOptions(),
                 controller: _controllerGasolina,

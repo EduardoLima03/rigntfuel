@@ -99,11 +99,14 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
                   ),
                   validator: (value) {
                     // TODO erro de validação
-                    if (value.isEmpty && _enableValidator) {
-                      if (int.parse(_finalOdometer.text) <=
+
+                    if (_enableValidator == true) {
+                      if (int.parse((_finalOdometer.text)) <=
                           int.parse(_initialOdometer.text)) {
                         return AppLocalizations.of(context)
                             .translate('validation_2');
+                      } else {
+                        return null;
                       }
                       return AppLocalizations.of(context)
                           .translate('validation');
