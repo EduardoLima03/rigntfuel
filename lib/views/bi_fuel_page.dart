@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import '../app_localizations.dart';
@@ -119,7 +120,8 @@ class _BiFuelPageState extends State<BiFuelPage> {
               ),
               Text(
                 _mensg,
-                style: TextStyle(color: Theme.of(context).accentColor),
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor, fontSize: 25.0),
               ),
             ],
           ),
