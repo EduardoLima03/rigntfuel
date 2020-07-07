@@ -15,5 +15,6 @@
     "tax_ethanol": "Preço do Etanol",
     "validation": "proibido campo vazio",
     "validation_2": "o valor têm que ser maior que o primeiro campo",
-    "msg": "está fazendo"
+    "msg": "está fazendo",
+    "coefficient":"Coeficiente de vantagem"
 }

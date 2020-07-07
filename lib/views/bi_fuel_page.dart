@@ -6,12 +6,11 @@ import '../app_localizations.dart';
 class BiFuelPage extends StatefulWidget {
   @override
   _BiFuelPageState createState() => _BiFuelPageState();
-
-  double _continuousValue = 70;
 }
 
 class _BiFuelPageState extends State<BiFuelPage> {
   String _mensg = "";
+  double _continuousValue = 70;
 
   final _controllerEtanol =
       MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
@@ -19,9 +18,16 @@ class _BiFuelPageState extends State<BiFuelPage> {
       MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
 
   void calculo() {
-    double porcentegem = widget._continuousValue / 100;
+    double porcentegem = _continuousValue / 100;
     double gasolina = double.parse(_controllerGasolina.text);
     double etanol = double.parse(_controllerEtanol.text);
+    /**
+     * TODO erro 0
+     * 
+     * esta entendo a realizão do calculo quando nada é digital, na verdade os 
+     * campos tem velor pela mascara que inicia com o valor 0.00. o programa
+     * não pode acontecer isso. Resolver no proximo comint ou branch
+     */
 
     if ((etanol / gasolina) <= porcentegem) {
       setState(() {
@@ -45,7 +51,15 @@ class _BiFuelPageState extends State<BiFuelPage> {
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              SizedBox(
+                height: 16.0,
+              ),
+              Text(
+                AppLocalizations.of(context).translate('coefficient'),
+                style: TextStyle(color: Theme.of(context).accentColor),
+              ),
               Column(
                 children: [
                   SizedBox(
@@ -56,25 +70,23 @@ class _BiFuelPageState extends State<BiFuelPage> {
                       onSubmitted: (value) {
                         //salvando o valor digitado na variavel
                         final double newValue = double.tryParse(value);
-                        if (newValue != null &&
-                            newValue != widget._continuousValue) {
+                        if (newValue != null && newValue != _continuousValue) {
                           setState(() {
-                            widget._continuousValue =
-                                newValue.clamp(0, 100) as double;
+                            _continuousValue = newValue.clamp(0, 100) as double;
                           });
                         }
                       },
                       keyboardType: TextInputType.number,
                       controller: TextEditingController(
-                        text: widget._continuousValue.toStringAsFixed(0),
+                        text: _continuousValue.toStringAsFixed(0),
                       ),
                     ),
                   ),
                   Slider(
-                    value: widget._continuousValue,
+                    value: _continuousValue,
                     onChanged: (value) {
                       setState(() {
-                        widget._continuousValue = value;
+                        _continuousValue = value;
                       });
                     },
                     min: 0,

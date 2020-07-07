@@ -108,8 +108,7 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
                       } else {
                         return null;
                       }
-                      return AppLocalizations.of(context)
-                          .translate('validation');
+                      //return AppLocalizations.of(context).translate('validation');
                     } else {
                       return null;
                     }
