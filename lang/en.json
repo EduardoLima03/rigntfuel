@@ -15,5 +15,6 @@
     "tax_ethanol": "Ethanol Price",
     "validation": "Prohibited empty field",
     "validation_2": "the value must be greater than the first field",
-    "msg": "Is doing"
+    "msg": "Is doing",
+    "coefficient": "Advantage coefficient"
 }
