@@ -45,6 +45,7 @@ class _BiFuelPageState extends State<BiFuelPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).translate('bifuel')),
+        actions: [IconButton(icon: Icon(Icons.help), onPressed: null)],
       ),
       body: Scrollbar(
         child: SingleChildScrollView(

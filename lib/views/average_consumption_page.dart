@@ -49,6 +49,7 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).translate('consumption')),
+        actions: [IconButton(icon: Icon(Icons.help), onPressed: () {})],
       ),
       body: Scrollbar(
         child: SingleChildScrollView(
