@@ -2,6 +2,8 @@
 
 aplicativo para auxilio no controle de combustivel
 
+<img src="/assets/01.png>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

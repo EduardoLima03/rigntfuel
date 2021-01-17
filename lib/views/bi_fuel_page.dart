@@ -42,10 +42,39 @@ class _BiFuelPageState extends State<BiFuelPage> {
 
   @override
   Widget build(BuildContext context) {
+    Future<void> _showMyDialog() async {
+      return showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(AppLocalizations.of(context).translate('help_title')),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context).translate('help_bifuel'),
+                    ),
+                    Text(
+                      AppLocalizations.of(context).translate('help_bifuel2'),
+                    ),
+                  ],
+                ),
+              ),
+              actions: [
+                TextButton(
+                  child: Text("Ok"),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ],
+            );
+          });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).translate('bifuel')),
-        actions: [IconButton(icon: Icon(Icons.help), onPressed: null)],
+        actions: [IconButton(icon: Icon(Icons.help), onPressed: _showMyDialog)],
       ),
       body: Scrollbar(
         child: SingleChildScrollView(

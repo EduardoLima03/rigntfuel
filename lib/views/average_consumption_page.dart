@@ -46,10 +46,59 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
 
   @override
   Widget build(BuildContext context) {
+    Future<void> _showMyDialog() async {
+      return showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(AppLocalizations.of(context).translate('help_title')),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context).translate('odometer_1'),
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(AppLocalizations.of(context)
+                        .translate('help_odometer_1')),
+                    Text(
+                      AppLocalizations.of(context).translate('odometer_2'),
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(AppLocalizations.of(context)
+                        .translate('help_odometer_2')),
+                    Text(
+                      AppLocalizations.of(context).translate('fuel'),
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(AppLocalizations.of(context).translate('help_fuel')),
+                  ],
+                ),
+              ),
+              actions: [
+                TextButton(
+                  child: Text("Ok"),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ],
+            );
+          });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).translate('consumption')),
-        actions: [IconButton(icon: Icon(Icons.help), onPressed: () {})],
+        actions: [IconButton(icon: Icon(Icons.help), onPressed: _showMyDialog)],
       ),
       body: Scrollbar(
         child: SingleChildScrollView(

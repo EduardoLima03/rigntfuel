@@ -16,5 +16,12 @@
     "validation": "campo vacío prohibido",
     "validation_2": "el valor debe ser mayor que el primer campo",
     "msg":"está haciendo",
-    "coefficient": "Coeficiente de ventaja"
+    "coefficient": "Coeficiente de ventaja",
+    "help_title":"Ayuda",
+    "help_odometer_1":"Nesse campo, você colocara a quilometragem no painel do seu veículo na hora que estiver abastecendo. Lembre-se de tirar uma foto ou anota a quilometragem.",
+    "help_odometer_2":"En este campo, es el lugar para ingresar el kilometraje que se encuentra en el tablero del vehículo en el momento en que está llenando por segunda vez.",
+    "help_fuel":"En el campo de combustible, recibe el valor en litros (como está marcado en la bomba) alimentado. Esto no sigue el suministro.",
+    "help_bifuel":"Es simple, solo divida el valor del etanol por la gasolina, si el resultado es menor que el coeficiente elegido, vale la pena suministrar etanol.",
+    "help_bifuel2": "* El coeficiente es la diferencia en el desempeño de su vehículo con cada combustible. Para vehículos nuevos, este coeficiente es del 75%. En general, la aplicación utilizará el 70%, pero puedes cambiar en cualquier momento."
+
 }

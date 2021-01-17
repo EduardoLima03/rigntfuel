@@ -16,5 +16,11 @@
     "validation": "Prohibited empty field",
     "validation_2": "the value must be greater than the first field",
     "msg": "Is doing",
-    "coefficient": "Advantage coefficient"
+    "coefficient": "Advantage coefficient",
+    "help_title":"Help",
+    "help_odometer_1":"In this field, you will enter the mileage on your vehicle's dashboard at the time you are filling up. Remember to take a photo or write down the mileage.",
+    "help_odometer_2":"In this field, it is the place to enter the mileage that is on the vehicle's dashboard at the time you are filling up a second time.",
+    "help_fuel":"In the fuel field, it receives the value in liters (as marked on the pump) fueled. This is not following supply.",
+    "help_bifuel":"It's simple, just divide the value of ethanol by gasoline, if the result is less than the chosen coefficient, it pays to supply with ethanol.",
+    "help_bifuel2": "*The coefficient is the difference in performance of your vehicle with each fuel. For new vehicles this coefficient is 75%. In general, the application will use 70%, but you can change at any time."
 }
