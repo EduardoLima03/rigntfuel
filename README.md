@@ -2,7 +2,7 @@
 
 aplicativo para auxilio no controle de combustivel
 
-![Projeto](https://github.com/EduardoLima03/rigntfuel/blob/master/assets/01.png?raw=true)
+![Projeto](https://github.com/EduardoLima03/rigntfuel/blob/thumbnails/assets/thumbnail.png?raw=true)
 
 ## Getting Started
 
