@@ -1,21 +1,21 @@
 # ![icon](https://github.com/EduardoLima03/rigntfuel/blob/master/assets/combustivel.png) rigntfuel
 
-aplicativo para auxilio no controle de combustivel
+Esse aplicativo surgiu da minha necessidade em saber o consumo energético de meu carro, sempre fazia o cálculo quando abastecia em um Posto de Combustíveis **quem não conhecia**. 
 
 ![Projeto](https://github.com/EduardoLima03/rigntfuel/blob/thumbnails/assets/thumbnail.png?raw=true)
 
-## Getting Started
+   
+ _Agora mim pergunta, para quer isso?_  
+Muito simples, conhecia bem o meu carro, por tanto sabia muito bem o consumo que ele fazia. Quando abastecia e ele demonstra um consumo diferente do habitual, geralmente aumentava, já sabia que o combustível não tinha qualidade, fora a perca de potência e alguns outros problemas mecânicos aqui apresentar.  
+**Outros motivos:**  
+1. Cálculo mais fácil.
+2. Sem anúncio.
+3. Estimulação ao estudo de desenvolvimento mobile.
+4. Por em pratica os conhecimentos em linguagem Dart e framework flutter.
 
-This project is a starting point for a Flutter application.
+## Download
+Baixe a versão de [debug](https://drive.google.com/open?id=1KtCy-i-pWL9esvxJFR7QNcMas8tAKXW4) e experimente.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 ### Atribuição
 
