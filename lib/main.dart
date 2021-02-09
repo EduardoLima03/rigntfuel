@@ -1,11 +1,18 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:rigntfuel/views/average_consumption_page.dart';
 import 'package:rigntfuel/views/bi_fuel_page.dart';
+import 'package:rigntfuel/widgets/admob_widget.dart';
 
 import 'app_localizations.dart';
+import 'utils/admob_util.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Admob.initialize(
+    testDeviceIds: [AdmobUtils().getAppId()],
+  );
   runApp(MyApp());
 }
 
@@ -94,6 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => BiFuelPage()));
                 }),
+            Container(
+              child: AdmobWidget(context).getBanner(AdmobBannerSize.BANNER),
+            )
           ],
         ),
       ),
