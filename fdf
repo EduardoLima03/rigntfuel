@@ -1,0 +1,171 @@
+[33mcommit d8b86dda9e0637ca2f2f37c26ad48429d47f0ed7[m[33m ([m[1;36mHEAD -> [m[1;32mfeature[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdevelop[m[33m)[m
+Merge: 0cedd04 7203703
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Tue Feb 9 13:35:48 2021 -0300
+
+    Merge branch 'thumbnails'
+
+[33mcommit 0cedd041419ef640db8e40a90394e761e8f1c181[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Tue Feb 9 13:25:22 2021 -0300
+
+    update2
+
+[33mcommit d56ea183fbc93b733519a55b88499e99ccf275a1[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Tue Feb 9 13:23:42 2021 -0300
+
+    update
+
+[33mcommit b1ba998d4296c0bd9bc9800affe99900e9858e88[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Tue Feb 9 13:21:00 2021 -0300
+
+    melhorias
+    
+    colocar icon do app;
+    colocar o criador do icon usado no icon do app
+
+[33mcommit dc8c68d3b5a5672e9f065492777c55637e0942b9[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jan 18 16:04:52 2021 -0300
+
+    readme atualizado
+
+[33mcommit 72037033973754d426cb115f2481220b28975db8[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jan 18 16:02:38 2021 -0300
+
+    foto
+
+[33mcommit d17d45897c62e7f4e9ffa83c9a9eb782095f3a23[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jan 18 15:15:26 2021 -0300
+
+    Colocando a foto do projeto
+
+[33mcommit 3859ae31fa7503137e0d3964e810d1462b5f67ff[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Sun Jan 17 18:09:16 2021 -0300
+
+    button help
+
+[33mcommit 8499a54bab63da5f31720a8e988240f425fc783a[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Fri Jan 15 11:53:58 2021 -0300
+
+    button_Help
+    
+    creating a button for the user can see how to use the functions listed on the screen.
+    
+    criação de um botão para o usuario pode ver como se usa as funções listada na tela
+
+[33mcommit c11025a4219ee3bc1fcdf30bac06f54321bc76ea[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jan 11 09:07:52 2021 -0300
+
+    criação e utilização do icon launcher
+    
+    usando o plugin de icon launcher para flutter
+
+[33mcommit 68296b19ff10b158f28b6c7f6c38317beae6c3de[m
+Merge: 5e278cc f8a1b81
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Fri Jan 8 09:33:36 2021 -0300
+
+    Merge branch 'master' of https://github.com/EduardoLima03/rigntfuel
+
+[33mcommit 5e278cc585838d07271b0f9acda0485640a691c2[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Fri Jan 8 09:33:26 2021 -0300
+
+    voltou a roda
+
+[33mcommit f8a1b810b54721d2b427bf7b7d004ea4191e5c5e[m
+Merge: a832e54 74cac4e
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Tue Jul 7 15:36:55 2020 -0300
+
+    Merge branch 'layout'
+
+[33mcommit 74cac4e3c58c40e58089270383a90553a2601022[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Tue Jul 7 15:33:59 2020 -0300
+
+    commit final
+    
+    ficou uns erros para ser resolvido em outra branch
+
+[33mcommit cd2bdbac9bb5166617d78e355799d7e6e0aae776[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jul 6 16:31:55 2020 -0300
+
+    fim da branch
+    
+    ficou alguns erros de validação para ser corrigido posteriormente em uma branch dedicada.
+
+[33mcommit ecbfd7b47af5c0140f3602b0e20aa0f2754f5cb0[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Fri Jul 3 14:56:16 2020 -0300
+
+    currency format tax
+    
+    corrigir o erro de entrada do preço
+
+[33mcommit 111ffd5fffd9f63829b5d3ee0e38149ee0b727b9[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jun 29 16:35:40 2020 -0300
+
+    termino da tela bi-fuel
+    
+    o Erro de validação ainda continua. ele deixa os campos tem o mesmo valor
+
+[33mcommit f068662c9f841f19e25412e98101b319bfd5c7f8[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jun 29 12:29:49 2020 -0300
+
+    tela biFuel
+    
+    tem o erro de validação marcado com o TODO para resolver. completar a tela de bi-combustivel
+
+[33mcommit a8cbf58ebd67229074023f3e7bbaed47cc092464[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Mon Jun 29 11:31:30 2020 -0300
+
+    validação dos campos
+    
+    Ficou um erro na validação do campo
+
+[33mcommit e6199e6ced610ab3f31cfdc6d411218fa75d0255[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Sun Jun 28 16:12:36 2020 -0300
+
+    tradução do app
+
+[33mcommit b126b0396576a1823a5288a214f498dc90cfe72f[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Sun Jun 28 11:58:42 2020 -0300
+
+    update02
+
+[33mcommit 3eeabaee5c6c3999ec4775d5db0dfdd517af4f63[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Sat Jun 27 21:29:31 2020 -0300
+
+    Revert "update01"
+    
+    This reverts commit e2ad7f394165285d6fce6e28d241d4129f02f137.
+
+[33mcommit e2ad7f394165285d6fce6e28d241d4129f02f137[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Sat Jun 27 21:29:31 2020 -0300
+
+    update01
+    
+    criação do texto traduzido, tela de comsumo medio e calculo de combustivel
+
+[33mcommit a832e5497285eb2dbdba7c8626f76453196c8431[m
+Author: Carlos Lima <tec.carlos.lima@gmail.com>
+Date:   Sat Jun 27 21:02:36 2020 -0300
+
+    inicio do app

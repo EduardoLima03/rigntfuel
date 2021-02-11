@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rigntfuel/app_localizations.dart';
+import 'package:rigntfuel/utils/app_localizations.dart';
 
 class AverageConsumptionPage extends StatefulWidget {
   @override
