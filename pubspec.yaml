@@ -37,7 +37,7 @@ dependencies:
   # Mascara para entrado de preço
   flutter_masked_text: ^0.8.0
 
-  admob_flutter: ^1.0.1
+  admob_flutter: ^0.3.4
 
 
 dev_dependencies:

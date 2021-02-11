@@ -11,7 +11,7 @@ import 'utils/admob_util.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Admob.initialize(
-    testDeviceIds: [AdmobUtils().getAppId()],
+    AdmobUtils().getAppId(),
   );
   runApp(MyApp());
 }
@@ -77,31 +77,40 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
-                child: Text(
-                  AppLocalizations.of(context).translate('consumption'),
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Theme.of(context).accentColor,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (contex) => AverageConsumptionPage()));
-                }),
-            RaisedButton(
-                child: Text(
-                  AppLocalizations.of(context).translate('bifuel'),
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                color: Theme.of(context).accentColor,
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BiFuelPage()));
-                }),
             Container(
+              width: 200,
+              child: RaisedButton(
+                  child: Text(
+                    AppLocalizations.of(context).translate('consumption'),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Theme.of(context).accentColor,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => AverageConsumptionPage()));
+                  }),
+            ),
+            Container(
+              width: 200,
+              child: RaisedButton(
+                  child: Text(
+                    AppLocalizations.of(context).translate('bifuel'),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  color: Theme.of(context).accentColor,
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => BiFuelPage()));
+                  }),
+            ),
+            Container(
+              width: 400,
+              height: 150,
+              color: Colors.red,
               child: AdmobWidget(context).getBanner(AdmobBannerSize.BANNER),
             )
           ],

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "907435825214",
+    "project_id": "rigntfuel",
+    "storage_bucket": "rigntfuel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907435825214:android:08bf91afb9fd0b7483996f",
+        "android_client_info": {
+          "package_name": "io.github.eduardolima03.rigntfuel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907435825214-q01d9259s41vro1npgvp8tho2as8ei5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdLd8xkeu6OItEIVBFxssnoc-L6Q2x6xY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907435825214-q01d9259s41vro1npgvp8tho2as8ei5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1077648445170203~4328167171"
+    }
+  ],
+  "configuration_version": "1"
+}
