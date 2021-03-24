@@ -148,8 +148,6 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
                         AppLocalizations.of(context).translate('hint_text_2'),
                   ),
                   validator: (value) {
-                    // TODO erro de validação
-
                     if (_enableValidator == true) {
                       if (int.parse((_finalOdometer.text)) <=
                           int.parse(_initialOdometer.text)) {
@@ -182,12 +180,11 @@ class _AverageConsumptionPageState extends State<AverageConsumptionPage> {
                 SizedBox(
                   height: 10,
                 ),
-                RaisedButton(
+                ElevatedButton(
                     child: Text(
                       AppLocalizations.of(context).translate('calculate'),
                       style: TextStyle(color: Colors.white),
                     ),
-                    color: Theme.of(context).accentColor,
                     onPressed: _calculationConsumption),
                 SizedBox(
                   height: 10,

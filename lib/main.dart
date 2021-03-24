@@ -77,26 +77,24 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
                 child: Text(
                   AppLocalizations.of(context).translate('consumption'),
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Theme.of(context).accentColor,
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (contex) => AverageConsumptionPage()));
                 }),
-            RaisedButton(
+            ElevatedButton(
                 child: Text(
                   AppLocalizations.of(context).translate('bifuel'),
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
-                color: Theme.of(context).accentColor,
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => BiFuelPage()));

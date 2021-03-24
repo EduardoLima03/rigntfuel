@@ -22,5 +22,6 @@
     "help_odometer_2":"In this field, it is the place to enter the mileage that is on the vehicle's dashboard at the time you are filling up a second time.",
     "help_fuel":"In the fuel field, it receives the value in liters (as marked on the pump) fueled. This is not following supply.",
     "help_bifuel":"It's simple, just divide the value of ethanol by gasoline, if the result is less than the chosen coefficient, it pays to supply with ethanol.",
-    "help_bifuel2": "*The coefficient is the difference in performance of your vehicle with each fuel. For new vehicles this coefficient is 75%. In general, the application will use 70%, but you can change at any time."
+    "help_bifuel2": "*The coefficient is the difference in performance of your vehicle with each fuel. For new vehicles this coefficient is 75%. In general, the application will use 70%, but you can change at any time.",
+    "help_zero":"Enter prices in the fields"
 }

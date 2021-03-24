@@ -17,26 +17,25 @@ class _BiFuelPageState extends State<BiFuelPage> {
   final _controllerGasolina =
       MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
 
+  setMensagem(key) {
+    setState(() {
+      _mensg = AppLocalizations.of(context).translate(key);
+    });
+  }
+
   void calculo() {
     double porcentegem = _continuousValue / 100;
     double gasolina = double.parse(_controllerGasolina.text);
     double etanol = double.parse(_controllerEtanol.text);
-    /**
-     * TODO erro 0
-     * 
-     * esta entendo a realizão do calculo quando nada é digital, na verdade os 
-     * campos tem velor pela mascara que inicia com o valor 0.00. o programa
-     * não pode acontecer isso. Resolver no proximo comint ou branch
-     */
 
-    if ((etanol / gasolina) <= porcentegem) {
-      setState(() {
-        _mensg = AppLocalizations.of(context).translate('smt_ethanol');
-      });
+    if (gasolina == 0.0 || etanol == 0.0) {
+      setMensagem('help_zero');
     } else {
-      setState(() {
-        _mensg = AppLocalizations.of(context).translate('smt_gasoline');
-      });
+      if ((etanol / gasolina) <= porcentegem) {
+        setMensagem('smt_ethanol');
+      } else {
+        setMensagem('smt_gasoline');
+      }
     }
   }
 
@@ -149,13 +148,12 @@ class _BiFuelPageState extends State<BiFuelPage> {
               SizedBox(
                 height: 24,
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: calculo,
                 child: Text(
                   AppLocalizations.of(context).translate('calculate'),
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Theme.of(context).accentColor,
               ),
               SizedBox(
                 height: 24,

@@ -22,5 +22,6 @@
     "help_odometer_2":"Nesse campo, é o local para colocar a quilometragem que está no painel do veículo na hora que você estiver abastecendo pela segunda vez.",
     "help_fuel":"No campo combustível recebe o valor em litros (do jeito que marca na bomba) abastecido. Isso no seguindo abastecimento.",
     "help_bifuel":"É coisa simples, é só dividir o valor do etanol pela da gasolina, se o resultado for menor que o coeficiente escolhido, compensa abastece com etanol.",
-    "help_bifuel2": "*O coeficiente é a diferença de desempenho do seu veículo com cada combustível. Para veículos novos esse coeficiente de 75%. De forma geral, o aplicativo usará 70%, mas você pode mudar a qualquer momento."
+    "help_bifuel2": "*O coeficiente é a diferença de desempenho do seu veículo com cada combustível. Para veículos novos esse coeficiente de 75%. De forma geral, o aplicativo usará 70%, mas você pode mudar a qualquer momento.",
+    "help_zero":"Digite os preços nos campos"
 }
