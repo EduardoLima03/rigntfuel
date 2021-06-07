@@ -1,18 +1,10 @@
-import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:rigntfuel/views/average_consumption_page.dart';
 import 'package:rigntfuel/views/bi_fuel_page.dart';
-import 'package:rigntfuel/widgets/admob_widget.dart';
-
-import 'utils/admob_util.dart';
 import 'utils/app_localizations.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  Admob.initialize(
-    testDeviceIds: [AdmobUtil.getAppId()],
-  );
   runApp(MyApp());
 }
 
@@ -66,44 +58,36 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _indiceAtual = 0;
+  final List<Widget> _telas = [
+    AverageConsumptionPage(),
+    BiFuelPage(),
+  ];
+
+  void _onTabTapped(int index) {
+    setState(() {
+      this._indiceAtual = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     //double _sizedWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('RigntFuel'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-                child: Text(
-                  AppLocalizations.of(context).translate('consumption'),
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (contex) => AverageConsumptionPage()));
-                }),
-            ElevatedButton(
-                child: Text(
-                  AppLocalizations.of(context).translate('bifuel'),
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BiFuelPage()));
-                }),
-            Container(
-              child: AdmobWidget(context).getBanner(),
-            ),
-          ],
-        ),
+      body: _telas[_indiceAtual],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _indiceAtual,
+        onTap: _onTabTapped,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.directions),
+            title: Text(AppLocalizations.of(context).translate('consumption')),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_gas_station),
+            title: Text(AppLocalizations.of(context).translate('bifuel')),
+          ),
+        ],
       ),
     );
   }
